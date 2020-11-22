@@ -4,16 +4,31 @@ I offer no support or anything related to this script. May have more success if 
 # Installation
 From PowerShell:
 
-```
+# Setup
+```bash
 git clone https://github.com/ima9rd/psdirect-queue.git  
 cd psdirect-queue  
-python -m venv env  
-./env/Scripts/activate  
-pip install -r requirements.txt  
-python app.py
+bash script_setup.sh
+bash bootstrap.sh
+```
+
+# Running PS Direct Queue
+```bash
+bash activate_pyenv.sh
+python3 app.py
+```
+
+# Setting up Microsoft Checkout
+- you need to first get the item in your cart while logged into your microsoft account - fortunately there seem to be many opportunities for this
+- copy the `config\microsoft_config_template.json` to `config\microsoft_config.json` and provide your own info (same account associated with your cart)
+
+# Running Microsoft Checkout
+```bash
+bash activate_pyenv.sh
+python3 microsoft.py
 ```
 
 If you encounter errors such as `No module named win32com.client, No module named win32, or No module named win32api`, you will need to install `pypiwin32`:
-```
-pip install pypiwin32
+```bash
+pip3 install pypiwin32
 ```
